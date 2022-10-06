@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components';
+
+import {IconSVG} from "./IconSVG";
+
 import './App.css';
 
+
+
+const LogoContainer = styled.div`
+  span,svg {
+    width: 50px;
+  }
+
+  p,path {
+    fill: red;
+    &:hover {
+      fill: blue;
+    };
+    &:active {
+      fill: green;
+    }
+  }
+
+`
+
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <LogoContainer>
+                <IconSVG url={"https://unpkg.com/mdi-svg@2.2.43/svg/access-point-network.svg"}/>
+            </LogoContainer>
+
+            <LogoContainer>
+                <IconSVG url={"https://cdn.svgporn.com/logos/react.svg"}/>
+            </LogoContainer>
+        </div>
+    );
 }
 
 export default App;
